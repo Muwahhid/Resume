@@ -1,0 +1,77 @@
+<%= form_with(model: resume, local: true) do |form| %>
+  <% if resume.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
+
+      <ul>
+      <% resume.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Name %>
+    <%= form.text_field :Name, id: :resume_Name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :DOB %>
+    <%= form.text_field :DOB, id: :resume_DOB %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Email %>
+    <%= form.text_field :Email, id: :resume_Email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Address %>
+    <%= form.text_area :Address, id: :resume_Address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Phone %>
+    <%= form.text_field :Phone, id: :resume_Phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Gender %>
+    <%= form.check_box :Gender, id: :resume_Gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Qualification %>
+    <%= form.text_field :Qualification, id: :resume_Qualification %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Experience %>
+    <%= form.text_field :Experience, id: :resume_Experience %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Projects %>
+    <%= form.text_area :Projects, id: :resume_Projects %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hobbies %>
+    <%= form.text_field :Hobbies, id: :resume_Hobbies %>
+  </div>
+
+  <div class="field">
+    <%= form.label :LanguagesKnown %>
+    <%= form.text_area :LanguagesKnown, id: :resume_LanguagesKnown %>
+  </div>
+
+  <div class="field">
+    <%= form.label :School_name %>
+    <%= form.text_area :School_name, id: :resume_School_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
